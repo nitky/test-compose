@@ -1,0 +1,11 @@
+version: "3.3"
+
+services:
+  test:
+    hostname: test
+    image: puppetester:latest
+    working_dir: /app/browser
+    volumes: 
+      - ./tests:/app/browser
+    environment:
+      - TARGET_URL=http://wordpress:80/wp-login.php
